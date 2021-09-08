@@ -1,1 +1,38 @@
 @import "variables";
+
+body {
+  background: $color-body;
+  @extend %avenir-400;
+}
+
+.cards {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 120px;
+  height: 500px;
+  background: rgb(210, 241, 255);
+  //////////////////////////
+  display: grid;
+  gap: 20px;
+  //////////////////////////
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, auto);
+  //////////////////////////
+  @media ($md) {
+    max-width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgb(254, 255, 210);
+  }
+  @media ($lg) {
+    max-width: 1000px;
+    background: rgb(255, 210, 210);
+  }
+  @media ($xl) {
+    background: rgb(214, 255, 210);
+    max-width: 1180px;
+  }
+  &__single-card {
+    height: 300px;
+    background: rgb(124, 89, 204);
+  }
+}
