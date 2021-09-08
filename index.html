@@ -33,7 +33,7 @@
         <h5 class="cards__notification">No card required, cancel any time</h5>
       </div>
       <div class="cards__single-card scale-in-center">
-        <span class="cards__label bounce-in-top">most popular</span>
+        <span id="typed" class="cards__label bounce-in-top"></span>
         <img class="cards__arrow rotate-in-tl" src="assets/svg/arrow.svg" />
         <h2 class="cards__title">Team</h2>
         <h4 class="cards__subtitle">For individuals and teams</h4>
@@ -88,6 +88,19 @@
         cards[1].classList.remove("scale-in-center");
         cards[2].classList.remove("slide-in-right");
       }, 3000);
+    </script>
+    <script src="js/typed.js"></script>
+    <script>
+      var typed = new Typed("#typed", {
+        strings: ["most popular", "best choice", "users pick"],
+        backSpeed: 100,
+        typeSpeed: 100,
+        startDelay: 0,
+        backDelay: 10000,
+        loop: true,
+        loopCount: Infinity,
+        showCursor: false,
+      });
     </script>
   </body>
 </html>
