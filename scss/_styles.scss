@@ -11,7 +11,7 @@ body {
   margin-top: 120px;
   padding: 10px;
   //   height: 500px;
-  background: rgb(210, 241, 255);
+  //   background: rgb(210, 241, 255);
   //////////////////////////
   display: grid;
   gap: 20px;
@@ -26,24 +26,51 @@ body {
   @media ($md) {
     max-width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    background: rgb(254, 255, 210);
+    // background: rgb(254, 255, 210);
   }
   @media ($lg) {
     max-width: 1000px;
-    background: rgb(255, 210, 210);
+    // background: rgb(255, 210, 210);
   }
   @media ($xl) {
-    background: rgb(214, 255, 210);
+    // background: rgb(214, 255, 210);
     max-width: 1180px;
+  }
+  ///////////////////////////
+  &__single-card:nth-of-type(1) .cards__price {
+    background: $color-single;
+  }
+  &__single-card:nth-of-type(2) .cards__price {
+    background: $color-team;
+  }
+  &__single-card:nth-of-type(3) .cards__price {
+    background: $color-business;
+  }
+  &__single-card:nth-of-type(2) {
+    position: relative;
   }
   ///////////////////////////
   &__single-card {
     // height: 100%;
     background: $color-body;
-    border: 3px solid $color-border;
+    border: 2px solid $color-border;
     border-radius: 16px;
     padding: 16px;
     text-align: center;
+    transition: all 0.3s ease;
+  }
+  ///////////////////////////
+  &__single-card:hover {
+    border: 2px solid #000000;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  &__single-card:hover .cards__button {
+    background: #000000;
+    color: $color-body;
+    @extend %avenir-800;
   }
   ///////////////////////////
   &__title {
@@ -60,8 +87,8 @@ body {
     margin-bottom: 20px;
   }
   ///////////////////////////
+
   &__price {
-    background: $color-single;
     width: 80%;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -156,11 +183,52 @@ body {
     border-radius: 6px;
     border: 2px solid #000000;
     display: block;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease 0.1s;
+  }
+  &__button:hover {
+    transform: translateY(-3px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   }
   ///////////////////////
   &__notification {
     @extend %avenir-400;
     color: $color-list;
   }
+  ///////////////////////
+  &__arrow {
+    width: 48px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    // background: rgb(253, 170, 170);
+    @media ($md) {
+      top: -20px;
+      left: 75%;
+    }
+    @media (max-width: 767.9px) {
+      left: 88%;
+    }
+    ///////////////////////////////
+  }
+
+  &__label {
+    @extend %badscript;
+    // background: rgb(255, 179, 179);
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    top: -55px;
+    left: 80%;
+    @media ($md) {
+      top: -55px;
+      left: 80%;
+    }
+    @media (max-width: 767.9px) {
+      left: 91%;
+      text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+        1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
+/////////////////////////////////////////////////
