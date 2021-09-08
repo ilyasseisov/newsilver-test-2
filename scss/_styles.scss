@@ -175,7 +175,8 @@ body {
     max-width: 80%;
     color: #000;
     @extend %avenir-400;
-    background: transparent;
+    // background: transparent;
+    background: #ffffff;
     font-size: 1em;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -183,7 +184,7 @@ body {
     border-radius: 6px;
     border: 2px solid #000000;
     display: block;
-    transition: all 0.3s ease 0.1s;
+    transition: all 0.3s ease;
   }
   &__button:hover {
     transform: translateY(-3px);
