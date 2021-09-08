@@ -64,9 +64,14 @@ a:not([href]):not([tabindex]):focus {
   outline: 0;
 }
 
-body {
+body, .cards__subtitle, .cards__price .block-two h4, .cards__price .block-two h5, .cards__list, .cards__button, .cards__notification {
   font-family: "Avenir", Arial, Helvetica, sans-serif;
   font-weight: 400;
+}
+
+.cards__title, .cards__price .block-one {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+  font-weight: 800;
 }
 
 body {
@@ -77,7 +82,7 @@ body {
   max-width: 80%;
   margin: 0 auto;
   margin-top: 120px;
-  height: 500px;
+  padding: 20px;
   background: #d2f1ff;
   display: -ms-grid;
   display: grid;
@@ -112,7 +117,109 @@ body {
 }
 
 .cards__single-card {
-  height: 300px;
-  background: #7c59cc;
+  background: #fff;
+  border: 3px solid #f4f4f4;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.cards__title {
+  text-align: center;
+  color: #121212;
+  margin-bottom: 5px;
+}
+
+.cards__subtitle {
+  text-align: center;
+  color: #c1c1c1;
+  margin-bottom: 20px;
+}
+
+.cards__price {
+  background: #fff7eb;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 8px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards__price {
+    width: 90%;
+  }
+}
+
+.cards__price .block-one {
+  display: inline-block;
+  width: 20%;
+  font-size: 2em;
+  position: relative;
+  top: 15px;
+}
+
+.cards__price .block-one sup {
+  font-size: 0.5em;
+  position: relative;
+  top: -5px;
+}
+
+.cards__price .block-two {
+  display: inline-block;
+  text-align: left;
+  width: 72%;
+}
+
+@media (min-width: 576px) and (max-width: 767.9px) {
+  .cards__price .block-two {
+    width: auto;
+  }
+}
+
+.cards__price .block-two h4 {
+  line-height: 0.9;
+  margin-bottom: 5px;
+}
+
+.cards__price .block-two h5 {
+  font-size: 0.7em;
+}
+
+.cards__list {
+  color: #adadad;
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.cards__list-item {
+  margin-bottom: 10px;
+}
+
+.cards__list-item span {
+  font-weight: bolder;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.cards__button {
+  max-width: 80%;
+  color: #000;
+  background: transparent;
+  font-size: 1em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 12px 32px;
+  border-radius: 6px;
+  border: 2px solid #000000;
+  display: block;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.cards__notification {
+  color: #adadad;
 }
 /*# sourceMappingURL=style.css.map */
