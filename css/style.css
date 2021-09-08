@@ -614,7 +614,7 @@ body {
 
 .cards__label {
   text-align: center;
-  display: inline-block;
+  display: inline;
   position: absolute;
   width: 50px;
   top: -55px;
