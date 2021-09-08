@@ -79,10 +79,10 @@ body {
 }
 
 .cards {
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   margin-top: 120px;
-  padding: 20px;
+  padding: 10px;
   background: #d2f1ff;
   display: -ms-grid;
   display: grid;
@@ -93,9 +93,15 @@ body {
       grid-template-rows: repeat(3, auto);
 }
 
+@media (min-width: 576px) and (max-width: 767.9px) {
+  .cards {
+    max-width: 70%;
+  }
+}
+
 @media (min-width: 768px) {
   .cards {
-    max-width: 90%;
+    max-width: 100%;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     background: #feffd2;
@@ -120,7 +126,7 @@ body {
   background: #fff;
   border: 3px solid #f4f4f4;
   border-radius: 16px;
-  padding: 20px;
+  padding: 16px;
   text-align: center;
 }
 
@@ -146,22 +152,41 @@ body {
   text-align: center;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 320px) and (max-width: 575.9px) {
   .cards__price {
     width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards__price {
+    width: 100%;
   }
 }
 
 .cards__price .block-one {
   display: inline-block;
   width: 20%;
-  font-size: 2em;
+  font-size: 1.8em;
   position: relative;
   top: 15px;
 }
 
+@media (min-width: 320px) and (max-width: 575.9px) {
+  .cards__price .block-one {
+    width: auto;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards__price .block-one {
+    font-size: 1.5em;
+  }
+}
+
 .cards__price .block-one sup {
-  font-size: 0.5em;
+  font-size: 0.4em;
   position: relative;
   top: -5px;
 }
@@ -170,6 +195,12 @@ body {
   display: inline-block;
   text-align: left;
   width: 72%;
+}
+
+@media (min-width: 320px) and (max-width: 575.9px) {
+  .cards__price .block-two {
+    width: auto;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767.9px) {
@@ -181,6 +212,13 @@ body {
 .cards__price .block-two h4 {
   line-height: 0.9;
   margin-bottom: 5px;
+  font-size: 0.85em;
+}
+
+@media (min-width: 320px) and (max-width: 575.9px) {
+  .cards__price .block-two h4 {
+    font-size: 0.65em;
+  }
 }
 
 .cards__price .block-two h5 {

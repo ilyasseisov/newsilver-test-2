@@ -6,10 +6,10 @@ body {
 }
 
 .cards {
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   margin-top: 120px;
-  padding: 20px;
+  padding: 10px;
   //   height: 500px;
   background: rgb(210, 241, 255);
   //////////////////////////
@@ -19,8 +19,12 @@ body {
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(3, auto);
   //////////////////////////
+  @media ($sm) and (max-width: 767.9px) {
+    max-width: 70%;
+  }
+  //////////////////////////
   @media ($md) {
-    max-width: 90%;
+    max-width: 100%;
     grid-template-columns: repeat(3, 1fr);
     background: rgb(254, 255, 210);
   }
@@ -38,7 +42,7 @@ body {
     background: $color-body;
     border: 3px solid $color-border;
     border-radius: 16px;
-    padding: 20px;
+    padding: 16px;
     text-align: center;
   }
   ///////////////////////////
@@ -65,8 +69,12 @@ body {
     padding-bottom: 20px;
     text-align: center;
     ///////////////////////////
-    @media ($md) and (max-width: 1023px) {
+    @media (min-width: 320px) and (max-width: 575.9px) {
       width: 90%;
+    }
+    ///////////////////////////
+    @media ($md) and (max-width: 1023px) {
+      width: 100%;
     }
     ///////////////////////////
     .block-one {
@@ -74,12 +82,18 @@ body {
       width: 20%;
       //   background: rgb(235, 160, 160);
       @extend %avenir-800;
-      font-size: 2em;
+      font-size: 1.8em;
       position: relative;
       top: 15px;
-
+      @media (min-width: 320px) and (max-width: 575.9px) {
+        width: auto;
+        font-size: 1.5em;
+      }
+      @media ($md) and (max-width: 1023px) {
+        font-size: 1.5em;
+      }
       sup {
-        font-size: 0.5em;
+        font-size: 0.4em;
         position: relative;
         top: -5px;
       }
@@ -89,6 +103,9 @@ body {
       text-align: left;
       width: 72%;
       //   background: rgb(160, 230, 235);
+      @media (min-width: 320px) and (max-width: 575.9px) {
+        width: auto;
+      }
       @media ($sm) and (max-width: 767.9px) {
         width: auto;
       }
@@ -96,6 +113,10 @@ body {
         @extend %avenir-400;
         line-height: 0.9;
         margin-bottom: 5px;
+        font-size: 0.85em;
+        @media (min-width: 320px) and (max-width: 575.9px) {
+          font-size: 0.65em;
+        }
       }
       h5 {
         @extend %avenir-400;
