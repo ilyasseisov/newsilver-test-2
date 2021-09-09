@@ -62,16 +62,15 @@ body {
   ///////////////////////////
   &__single-card:hover {
     border: 2px solid #000000;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transform: scale(1.03) translateY(-15px);
     cursor: pointer;
   }
-  &__single-card:hover .cards__button {
-    background: #000000;
-    color: $color-body;
-    @extend %avenir-800;
-  }
+  // &__single-card:hover .cards__button {
+  //   background: #000000;
+  //   color: $color-body;
+  //   @extend %avenir-800;
+  // }
   ///////////////////////////
   &__title {
     text-align: center;
@@ -185,11 +184,42 @@ body {
     border: 2px solid #000000;
     display: block;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
+
   &__button:hover {
-    transform: translateY(-3px);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    background: #000000;
   }
+
+  &__button:before {
+    content: "Get Started";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -350px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 350px;
+    background: #000000;
+    border-radius: 70%;
+    transition: 0.6s ease-out;
+    font-weight: bolder;
+    color: #ffffff;
+  }
+
+  &__button:hover:before {
+    bottom: -155px;
+    @media (min-width: 768px) and (max-width: 996px) {
+      bottom: -145px;
+    }
+    @media (min-width: 280px) and (max-width: 369px) {
+      bottom: -145px;
+    }
+  }
+
   ///////////////////////
   &__notification {
     @extend %avenir-400;
