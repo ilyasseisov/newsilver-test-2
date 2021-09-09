@@ -54,23 +54,98 @@ body {
     // height: 100%;
     background: $color-body;
     border: 2px solid $color-border;
-    border-radius: 16px;
+    // border-radius: 16px;
     padding: 16px;
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
   }
+
   ///////////////////////////
   &__single-card:hover {
-    border: 2px solid #000000;
+    // border: 2px solid #000000;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transform: scale(1.03) translateY(-15px);
     cursor: pointer;
+    border: none;
   }
-  // &__single-card:hover .cards__button {
-  //   background: #000000;
-  //   color: $color-body;
-  //   @extend %avenir-800;
-  // }
+  ////////////////////////////
+  &__single-card .line {
+    background: #000000;
+    position: absolute;
+    display: block;
+  }
+  ////////////////////////////////////////
+  &__single-card .line:nth-of-type(1) {
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.2s;
+  }
+  &__single-card:hover .line:nth-of-type(1) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.2s;
+  }
+  ////////////////////////////////////////
+  ////////////////////////////////////////
+  &__single-card .line:nth-of-type(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s;
+    transition-delay: 0.2s;
+  }
+  &__single-card:hover .line:nth-of-type(2) {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.2s;
+    transition-delay: 0.2s;
+  }
+  ////////////////////////////////////////
+  ////////////////////////////////////////
+  &__single-card .line:nth-of-type(3) {
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s;
+    transition-delay: 0.4s;
+  }
+  &__single-card:hover .line:nth-of-type(3) {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.2s;
+    transition-delay: 0.4s;
+  }
+  ////////////////////////////////////////
+  ////////////////////////////////////////
+  &__single-card .line:nth-of-type(4) {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s;
+    transition-delay: 0.6s;
+  }
+  &__single-card:hover .line:nth-of-type(4) {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.2s;
+    transition-delay: 0.6s;
+  }
+  ////////////////////////////////////////
+
   ///////////////////////////
   &__title {
     text-align: center;
